@@ -1,28 +1,11 @@
 <?php
 
-namespace App\Math;
+require_once('./LuasLingkaran.php'); //cara panggil file
 
-class LuasLingkaran {
+use App\Math\LuasLingkaran; //panggil class
 
-    public const phi = 3.14;
-    protected int $jari;
-    
-    public function __construct($isiJari = 1) {
-        $this->jari = $isiJari; //10
-    }
+$lingkaran = new LuasLingkaran(10);
+// $lingkaran->jari = 12;
+$lingkaran->tampil('roda'); //panggil method tampil
 
-    public function tampil($nama = 'ban') {
-        $rumus = LuasLingkaran::phi * ($this->jari * $this->jari);
-        echo "Lingkaran {$nama} hasilnya adalah: {$rumus}";
-    }
-
-    public static function testing() {
-        echo "<br/>";
-        echo "ini dari static";
-    }
-
-    public function __destruct() {
-        echo "<br/>";
-        echo "udah ah cape";
-    }
-}
+LuasLingkaran::testing(); //panggil static method
